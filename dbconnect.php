@@ -1,7 +1,7 @@
 <?php
-$con = mysql_connect("localhost", "saikat", "ppioneer");
+$con = mysql_connect("host", "user", "password");
 if(!$con) {
   die("Unable to connect to database ".mysql_error());
 }
-mysql_select_db("todo_db", $con);
+mysql_select_db("db", $con);
 ?>
