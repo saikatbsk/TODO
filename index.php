@@ -100,6 +100,8 @@
               echo "</tr>";
             }
             else {
+              date_default_timezone_set($time_zone);
+              
               while($row = mysql_fetch_array($x)) {
                 $d = date('Y-m-d');
                 if($d == $row['date']) {
