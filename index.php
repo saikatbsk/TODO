@@ -81,7 +81,7 @@
         <legend>TODO List</legend>
         <?php
         include("dbconnect.php");
-        $x = mysql_query("SELECT * FROM todo WHERE `todo`.`done`=0");
+        $x = mysql_query("SELECT * FROM todo WHERE `todo`.`done`=0 ORDER BY `date`");
         echo "
         <table class='table table-hover'>
           <thead>
