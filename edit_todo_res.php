@@ -7,7 +7,7 @@
   <?php
   include("dbconnect.php");
 
-  $q = "UPDATE todo SET `todo`.`desc`='".$_POST['desc']."' WHERE `todo`.`id`=".$_POST['id'];
+  $q = "UPDATE todo SET `todo`.`desc`='".$_POST['desc']."', `todo`.`date`='".$_POST['date']."' WHERE `todo`.`id`=".$_POST['id'];
   $x = mysql_query($q);
 
   if($x == 1) {

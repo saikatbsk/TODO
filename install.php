@@ -11,7 +11,7 @@
   include("dbconnect.php");
 
   echo "Creating tables..<br>";
-  $query="CREATE TABLE IF NOT EXISTS `todo` ( `id` int(11) NOT NULL AUTO_INCREMENT, `desc` varchar(200) NOT NULL, `done` int(11) NOT NULL, PRIMARY KEY (`id`))";
+  $query="CREATE TABLE IF NOT EXISTS `todo` ( `id` int(11) NOT NULL AUTO_INCREMENT, `desc` varchar(200) NOT NULL, `date` date NOT NULL, `done` int(11) NOT NULL, PRIMARY KEY (`id`))";
   $x = mysql_query($query);
   if($x==1){
     echo "Done Installing.";

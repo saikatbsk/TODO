@@ -7,7 +7,7 @@
   <?php
   include("dbconnect.php");
 
-  $q = "INSERT INTO todo (`todo`.`desc`, `todo`.`done`) VALUES('".$_POST['desc']."', 0)";
+  $q = "INSERT INTO todo (`todo`.`desc`, `todo`.`date`, `todo`.`done`) VALUES('".$_POST['desc']."', '".$_POST['date']."', 0)";
   $x = mysql_query($q);
 
   if($x == 1) {
