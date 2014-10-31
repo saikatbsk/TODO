@@ -9,4 +9,7 @@ Installation :arrow_forward:
 * Edit dbconnect.php and change host, user, password and database name.
 * Run install.php to install.
 
+[ This application is in public domain. It comes with no warranty.
+I do not provide any kind of support at all. Use at your own risk. ]
+
 > Live long and may the source be with you. :octocat:
