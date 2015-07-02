@@ -12,4 +12,4 @@ Installation :arrow_forward:
 [ This application is in public domain. It comes with no warranty.
 I do not provide any kind of support at all. Use at your own risk. ]
 
-> Live long and may the source be with you. :octocat:
+> Live long and may the source be with you :octocat:
