@@ -8,7 +8,7 @@
   include("dbconnect.php");
 
   $q = "INSERT INTO todo (`todo`.`desc`, `todo`.`date`, `todo`.`done`) VALUES('".$_POST['desc']."', '".$_POST['date']."', 0)";
-  $x = mysql_query($q);
+  $x = mysqli_query($con, $q);
 
   if($x == 1) {
     header('Location: index.php');
@@ -17,7 +17,7 @@
     /* TODO: Error report */
   }
 
-  mysql_close($con);
+  mysqli_close($con);
   ?>
 </body>
 </html>

@@ -8,7 +8,7 @@
   include("dbconnect.php");
 
   $q = "UPDATE todo SET `todo`.`desc`='".$_POST['desc']."', `todo`.`date`='".$_POST['date']."' WHERE `todo`.`id`=".$_POST['id'];
-  $x = mysql_query($q);
+  $x = mysqli_query($con, $q);
 
   if($x == 1) {
     header('Location: index.php');
@@ -17,7 +17,7 @@
     /* TODO: Error report */
   }
 
-  mysql_close($con);
+  mysqli_close($con);
   ?>
 </body>
 </html>

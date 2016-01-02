@@ -81,7 +81,7 @@
         <legend>TODO List</legend>
         <?php
         include("dbconnect.php");
-        $x = mysql_query("SELECT * FROM todo WHERE `todo`.`done`=0 ORDER BY `date`");
+        $x = mysqli_query($con, "SELECT * FROM todo WHERE `todo`.`done`=0 ORDER BY `date`");
         echo "
         <table class='table table-hover'>
           <thead>
@@ -92,60 +92,60 @@
             </tr>
           </thead>
           ";
-          if(mysql_num_rows($x) == 0) {
+          if(mysqli_num_rows($x) == 0) {
             echo "<tr>";
             echo "<td>Sorry no todo to display :-(</td>";
             echo "<td>-</td>";
             echo "<td>-</td>";
+            echo "</tr>";
+          }
+          else {
+            date_default_timezone_set($time_zone);
+
+            while($row = mysqli_fetch_array($x)) {
+              $d = date('Y-m-d');
+              if($d == $row['date']) {
+                $display_date = 'Today';
+              }
+              else {
+                $display_date = $row['date'];
+              }
+              echo "<tr>";
+              echo "<td>".$row['desc']."</td>";
+              echo "<td>".$display_date."</td>";
+              echo "<td><a href='done_todo.php?id=".$row['id']."'>done</a> | <a href='edit_todo.php?id=".$row['id']."'>edit</a> | <a href='del_todo.php?id=".$row['id']."'>delete</a>";
               echo "</tr>";
             }
-            else {
-              date_default_timezone_set($time_zone);
-              
-              while($row = mysql_fetch_array($x)) {
-                $d = date('Y-m-d');
-                if($d == $row['date']) {
-                  $display_date = 'Today';
-                }
-                else {
-                  $display_date = $row['date'];
-                }
-                echo "<tr>";
-                echo "<td>".$row['desc']."</td>";
-                echo "<td>".$display_date."</td>";
-                echo "<td><a href='done_todo.php?id=".$row['id']."'>done</a> | <a href='edit_todo.php?id=".$row['id']."'>edit</a> | <a href='del_todo.php?id=".$row['id']."'>delete</a>";
-                echo "</tr>";
-              }
-            }
+          }
 
-            $x = mysql_query("SELECT * FROM todo WHERE `todo`.`done`=1");
-            if(mysql_num_rows($x) == 0) {
-              echo "</tbody>";
-              echo "</table>";
+          $x = mysqli_query($con, "SELECT * FROM todo WHERE `todo`.`done`=1");
+          if(mysqli_num_rows($x) == 0) {
+            echo "</tbody>";
+            echo "</table>";
+          }
+          else {
+            while($row = mysqli_fetch_array($x)) {
+              echo "<tr>";
+              echo "<td><strike>".$row['desc']."</strike></td>";
+              echo "<td><strike>".$row['date']."</strike></td>";
+              echo "<td><a href='del_todo.php?id=".$row['id']."'>delete</a>";
+              echo "</tr>";
             }
-            else {
-              while($row = mysql_fetch_array($x)) {
-                echo "<tr>";
-                echo "<td><strike>".$row['desc']."</strike></td>";
-                echo "<td><strike>".$row['date']."</strike></td>";
-                echo "<td><a href='del_todo.php?id=".$row['id']."'>delete</a>";
-                echo "</tr>";
-              }
-              echo "</tbody>";
-              echo "</table>";
-            }
-            mysql_close($con);
-            ?>
-          </div>
-        </div>
+            echo "</tbody>";
+            echo "</table>";
+          }
+          mysqli_close($con);
+        ?>
       </div>
+    </div>
+  </div>
 
-      <footer class="footer">
-        <div class="container">
-          <p class="muted credit">:)</p>
-        </div>
-      </footer>
+  <footer class="footer">
+    <div class="container">
+      <p class="muted credit">:)</p>
+    </div>
+  </footer>
 
-      <script src="bootstrap/js/bootstrap.js"></script>
-    </body>
-    </html>
+  <script src="bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

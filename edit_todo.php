@@ -50,8 +50,8 @@
   include("dbconnect.php");
 
   $q = "SELECT * FROM todo WHERE id=".$_GET['id'];
-  $x = mysql_query($q);
-  $row = mysql_fetch_array($x);
+  $x = mysqli_query($con, $q);
+  $row = mysqli_fetch_array($x);
 
   echo "<div class='container'>";
   echo "<form class='form-myform form-search' action='edit_todo_res.php' method='post'>";
@@ -67,7 +67,7 @@
   echo "</form>";
   echo "</div>";
 
-  mysql_close($con);
+  mysqli_close($con);
   ?>
 
   <footer class="footer">
