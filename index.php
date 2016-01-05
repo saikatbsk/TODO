@@ -12,34 +12,6 @@
   <script src="jquery/js/jquery.js"></script>
   <script src="jquery/js/jquery-ui.js"></script>
   <script src="js/script.js"></script>
-
-  <style type="text/css">
-    .form-myform {
-      max-width: 300px;
-      padding: 19px 29px 29px;
-      margin: 0 auto 20px;
-      background-color: #fff;
-      border: 1px solid #e5e5e5;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-      box-shadow: 0 1px 2px rgba(0,0,0,.05);
-    }
-    .form-myform .form-myform-heading,
-    .form-myform .checkbox {
-      margin-bottom: 10px;
-    }
-    .form-myform input[type="text"],
-    .form-myform input[type="password"] {
-      font-size: 16px;
-      height: auto;
-      margin-bottom: 15px;
-      padding: 7px 9px;
-    }
-
-  </style>
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
