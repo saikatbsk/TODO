@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>Edit TODO</title>
+  <meta name=viewport content='width=640'>
   <link rel="shortcut icon" href="images/favicon.png">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css">
-  <link rel="stylesheet" href="jquery/css/jquery-ui.css" />
+  <link rel="stylesheet" href="jquery/css/jquery-ui.css">
 
   <script src="jquery/js/jquery.js"></script>
   <script src="jquery/js/jquery-ui.js"></script>
@@ -70,10 +71,5 @@
   mysqli_close($con);
   ?>
 
-  <footer class="footer">
-    <div class="container">
-      <p class="muted credit">:)</p>
-    </div>
-  </footer>
 </body>
 </html>

@@ -12,9 +12,13 @@
     echo "Done <br>";
 
     echo "Creating tables.. ";
-    $query="CREATE TABLE IF NOT EXISTS `todo` ( `id` int(11) NOT NULL AUTO_INCREMENT, `desc` varchar(200) NOT NULL, `date` date NOT NULL, `done` int(11) NOT NULL, PRIMARY KEY (`id`))";
-    $x = mysqli_query($con, $query);
-    if($x==1){
+    $query1 = "CREATE TABLE IF NOT EXISTS `todo` (`id` int(11) NOT NULL AUTO_INCREMENT, `desc` varchar(200) NOT NULL, `date` date NOT NULL, `done` int(11) NOT NULL, PRIMARY KEY (`id`))";
+    $x = mysqli_query($con, $query1);
+
+    $query2 = "CREATE TABLE IF NOT EXISTS `scrap` (`desc` varchar(1024) NOT NULL, `timestamp` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (`timestamp`))";
+    $y = mysqli_query($con, $query2);
+
+    if($x==1 && $y==1){
       echo "Done <br>";
     }
     else{
