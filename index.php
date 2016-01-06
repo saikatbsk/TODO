@@ -47,7 +47,7 @@
         <table class='table table-hover'>
           <thead>
             <tr>
-              <th>Descriptions</th>
+              <th>Description</th>
               <th>Date</th>
               <th>Actions</th>
             </tr>
