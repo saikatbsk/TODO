@@ -38,19 +38,6 @@
     </div>
 
     <div class="row">
-      <div class="span3">
-        <form class="form-search form-myform" action="add_todo.php" method="post">
-          <fieldset>
-            <h3>Add new TODO</h3>
-            <div class="">
-              <input class="input-block-level" type="text" name="desc" placeholder="Description..." />
-              <input class="input-block-level" type="text" name="date" placeholder="Date..." id="datepicker" />
-              <input class="btn btn-large btn-primary" type="submit" value="Add">
-            </div>
-          </fieldset>
-        </form>
-      </div>
-
       <div class="span6">
         <legend>TODO List</legend>
         <?php
@@ -148,6 +135,20 @@
         mysqli_close($con);
         ?>
       </div>
+
+      <div class="span3">
+        <form class="form-search form-myform" action="add_todo.php" method="post">
+          <fieldset>
+            <h3>Add new TODO</h3>
+            <div class="">
+              <input class="input-block-level" type="text" name="desc" placeholder="Description..." />
+              <input class="input-block-level" type="text" name="date" placeholder="Date..." id="datepicker" />
+              <input class="btn btn-large btn-primary" type="submit" value="Add">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+
     </div>
   </div>
 
