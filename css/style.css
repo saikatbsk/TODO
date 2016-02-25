@@ -10,6 +10,7 @@
 }
 
 .form-myform {
+    min-height: 320px;
     max-width: 300px;
     padding: 18px 18px;
     margin: 0 auto 20px;
