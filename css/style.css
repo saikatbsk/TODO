@@ -36,3 +36,8 @@
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+
+.btn {
+    min-width: 96px;
+    min-height: 48px;
+}
